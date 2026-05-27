@@ -1,6 +1,7 @@
 server {
-    listen 80;
+    listen ${LISTEN_PORT};
     server_name ${SERVER_NAME};
+    server_tokens off;
 
     # Security headers
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
