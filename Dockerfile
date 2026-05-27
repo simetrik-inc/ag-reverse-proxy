@@ -1,0 +1,13 @@
+FROM nginx:1.27-alpine
+
+ARG PROXY_HOST=127.0.0.1
+ARG PROXY_PORT=8000
+ARG SERVER_NAME=_
+
+ENV PROXY_HOST=${PROXY_HOST}
+ENV PROXY_PORT=${PROXY_PORT}
+ENV SERVER_NAME=${SERVER_NAME}
+
+COPY nginx.conf.template /etc/nginx/templates/default.conf.template
+
+EXPOSE 80
